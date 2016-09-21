@@ -1,0 +1,58 @@
+$red: #B40000;
+
+.inner {
+  max-width: 1400px;
+  padding: 15px;
+  margin: auto;
+}
+$tablet: "only screen and (min-width : 767px)";
+.banner.ng-anchor {
+  /* this animation will last for 1 second since there are
+         two phases to the animation (an `in` and an `out` phase) */
+  transition:0.5s linear all;
+}
+
+
+
+
+.view-animation.ng-enter, .view-animation.ng-leave {
+  transition: all 0.5s linear;
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+}
+
+
+.view-animation.ng-enter  {
+    // @extend .rotateOutDownLeft;
+    // @extend .animated;
+}
+
+//start
+.view-animation.ng-enter.ng-enter-active  {
+
+    @extend .animated;
+    &.slide-in-right {
+      @extend .slideInRight;
+    }
+    &.slide-in-left {
+      @extend .slideInLeft;
+    }
+}
+//goes away
+.view-animation.ng-leave.ng-leave-active {
+
+  @extend .animated;
+  &.slide-in-right {
+    @extend .slideOutLeft;
+  }
+  &.slide-in-left {
+    @extend .slideOutRight;
+  }
+}
+
+.view-animation.ng-leave {
+  // @extend .rotateOutUpLeft;
+  // @extend .animated;
+}
